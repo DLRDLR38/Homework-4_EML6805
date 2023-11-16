@@ -74,14 +74,10 @@ while(1)
 {
 //save value read from the frequencyOut pin of the TCS3200 color sensor into the variable colorTested
 colorIdentified = digitalRead(frequencyOut);
-
-}
-
-//if statement to compare value read from frequencyOut pin of TCS3200 and compare it to the known value of blueLight.
-//To allow for small discrepancies the value of 10 has been added/subtracted to blueLight
+//if statement to compare value read from frequencyOut pin of TCS3200 and compare it to the known value of blueLight. To allow for small discrepancies the value of 10 has been added/subtracted to blueLight
 if (colorIdentified > constrain(blueLight, blueLight - 10, blueLight +10) || colorIdentified < constrain(blueLight,blueLight - 10, blueLight +10))
 {
 Serial.println("A blue object has been detected for the robotic arm to pick up");
 }
-
+}
 }
